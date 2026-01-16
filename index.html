@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  <title>AI‑Math Coach</title>
+</head>
+<body>
+  <div id="rainbow-overlay"></div>
+  
+  <!-- CONTROLES DE MÚSICA -->
+  <div id="music-controls" class="music-controls">
+    <audio id="background-music" loop>
+      <source src="musica/background.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio HTML5
+    </audio>
+    
+    <button id="play-pause-btn" class="control-btn" title="Reproducir/Pausar">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path id="play-icon" d="M8 5v14l11-7z"/>
+        <path id="pause-icon" style="display:none;" d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+      </svg>
+    </button>
+    
+    <div class="volume-container">
+      <svg class="volume-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.26 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+      </svg>
+      <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" value="50">
+    </div>
+  </div>
+  
+  <!-- HERO -->
+  <header id="hero" class="hero">
+    <img src="imagenes/logo.png" alt="AI Math Coach" />
+    <h1>Aprende matemáticas jugando</h1>
+    <div class="hero-buttons">
+      <button class="cta" onclick="document.querySelector('#sec1-2').scrollIntoView({behavior:'smooth'})">
+        Conoce más
+      </button>
+      <button class="cta secondary" onclick="document.querySelector('#sec8').scrollIntoView({behavior:'smooth'})">
+        Descargar
+      </button>
+      <button class="cta tertiary" onclick="document.querySelector('#jugabilidad').scrollIntoView({behavior:'smooth'})">
+        Jugabilidad
+      </button>
+    </div>
+  </header>
+
+  <!-- SECCIÓN 1 y 2 -->
+  <section id="sec1-2">
+    <div class="double-feature">
+      <div class="feature from-right vertical">
+        <h2>Entorno gamificado</h2>
+        <img src="imagenes/Captura de pantalla 2026-01-07 132622.png" alt="Entorno gamificado" />
+        <p>
+          AI‑Math Coach transforma el aprendizaje de las matemáticas en una experiencia
+          interactiva, donde cada reto se presenta como un juego con recompensas,
+          retroalimentación inmediata y progresión por niveles.
+        </p>
+      </div>
+      <div class="feature from-left vertical">
+        <h2>Aprende haciendo</h2>
+        <img src="imagenes/Captura de pantalla 2026-01-07 132643.png" alt="Aprendizaje activo" />
+        <p>
+          Cada mecánica está diseñada para que el estudiante razone, experimente y
+          tome decisiones, reforzando conceptos matemáticos de forma práctica y visual.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3 -->
+  <section id="sec3">
+    <div class="feature from-right">
+      <div>
+        <h2>Diseño atractivo</h2>
+        <p>
+          Inspirado en una estética de juego arcade moderno, con colores vibrantes
+          acordes al logotipo y una interfaz clara que mantiene la atención del usuario.
+        </p>
+      </div>
+      <img src="imagenes/Captura de pantalla 2026-01-07 132722.png" alt="Diseño del juego" />
+    </div>
+  </section>
+  <!-- SECCIÓN 4 -->
+  <section id="sec4">
+    <div class="feature reverse from-left">
+      <div>
+        <h2>Soporte Adaptativo</h2>
+        <p>
+          Integración de un asistente de inteligencia artificial que guía al estudiante,
+          responde preguntas y ofrece explicaciones detalladas para resolver dudas
+          durante el aprendizaje.
+        </p>
+        <br/>
+        <p>
+          El docente puede visualizar el progreso de sus estudiantes, cambiar configuraciones
+          y asignar tareas específicas, fomentando un entorno colaborativo y de apoyo. Esto mediante
+          una aplicación externa al juego.
+        </p>
+      </div>
+      <img src="imagenes/asistente.png" alt="Asistente IA" />
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5 y 6 -->
+  <section id="sec5-6">
+    <div class="double-feature">
+      <div class="feature from-right vertical">
+        <h2>Progreso Personalizado</h2>
+        <img src="imagenes/juego1.png" alt="Progreso personalizado" />
+        <img src="imagenes/juego1_1.png" alt="Progreso personalizado 2" />
+        <p>
+          El sistema adapta la dificultad y los contenidos según el rendimiento del
+          estudiante, ademas, se les incorpora un asistente que los puede ir apoyando al ver
+          ciertas dificultades o errores del estudiante, asegurando un aprendizaje efectivo y motivador.
+        </p>
+      </div>
+      <div class="feature from-left vertical">
+        <h2>Accesibilidad Total</h2>
+        <img src="imagenes/multiplataforma.png" alt="Accesibilidad" />
+        <p>
+          AI‑Math Coach está diseñado para ser accesible desde cualquier dispositivo
+          con conexión a internet, ya sea movil o computadora, permitiendo a los estudiantes aprender en cualquier
+          momento y lugar.
+        </p>
+        <p>
+          Las plataformas soportadas incluyen Windows, Android y acceso web.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVISOR -->
+  <div class="section-divider"></div>
+
+  <!-- JUGABILIDAD -->
+  <section id="jugabilidad">
+    <div class="feature from-right">
+      <div>
+        <h2>Juego 1: ¿Qué son los datos?</h2>
+        <p>
+          Responde preguntas sobre tipos de datos y su representación visual
+          para avanzar en el juego. Responde correctamente para ganar puntos y 
+          desbloquear nuevos juegos.
+        </p>
+      </div>
+      <img src="imagenes/juego1.png" alt="Nivel 1" />
+    </div>
+  </section>
+
+  <section id="nivel2">
+    <div class="feature reverse from-left">
+      <div>
+        <h2>Juego 2: Conteo y registro de datos</h2>
+        <p>
+          Realiza conteos y registros de datos con mecánicas de juego que facilitan el aprendizaje,
+          Responde correctamente para ganar puntos y desbloquear nuevos juegos, cada ronda van incrementando
+          la cantidad de elementos a contabilizar, aumentando la dificultad.
+        </p>
+      </div>
+      <img src="imagenes/juego2.png" alt="Nivel 2" />
+    </div>
+  </section>
+
+  <section id="nivel3">
+    <div class="feature from-right">
+      <div>
+        <h2>Juego 3: Frecuencia simple</h2>
+        <p>
+          Aprende a calcular frecuencias simples mediante juegos interactivos
+          que refuerzan el concepto de manera divertida. Completa la tabla con la
+          cantidad de veces que aparece cada elemento. Mucho cuidado, ya que cada
+          error cuesta y mucho.
+        </p>
+      </div>
+      <img src="imagenes/juego3.png" alt="Nivel 3" />
+    </div>
+  </section>
+
+  <section id="nivel4">
+    <div class="feature reverse from-left">
+      <div>
+        <h2>Juego 4: Construcción de tablas</h2>
+        <p>
+          Construye tablas de datos a partir de información dada,
+          debes realizar conteo de datos para poder responder correctamente la tabla,
+          aplicando conceptos matemáticos en un entorno lúdico. 
+          Responde correctamente para ganar puntos y desbloquear nuevos juegos.
+        </p>
+      </div>
+      <img src="imagenes/juego4.png" alt="Nivel 4" />
+    </div>
+  </section>
+
+  <section id="nivel5">
+    <div class="feature from-right">
+      <div>
+        <h2>Juego 5: Interpretación de tablas</h2>
+        <p>
+          Interpreta tablas de datos para responder preguntas y resolver problemas,
+          aplicando tus conocimientos matemáticos en un entorno interactivo.
+          Responde correctamente para ganar puntos y desbloquear nuevos juegos.
+        </p>
+      </div>
+      <img src="imagenes/juego5.png" alt="Nivel 5" />
+    </div>
+  </section>
+
+  <section id="nivel6">
+    <div class="feature reverse from-left">
+      <div>
+        <h2>Juego 6: Conceptos de graficas</h2>
+        <p>
+          Responde preguntas sobre gráficos de barras, pictograma y muchos otros
+          conceptos sobre las representaciones graficas de datos,
+          aplicando tus conocimientos matemáticos en un entorno interactivo.
+          Responde correctamente para ganar puntos y desbloquear nuevos juegos.
+        </p>
+      </div>
+      <img src="imagenes/juego6.png" alt="Nivel 6" />
+    </div>
+  </section>
+
+  <section id="nivel7">
+    <div class="feature from-right">
+      <div>
+        <h2>Nivel 7: Representaciones graficas</h2>
+        <p>
+          Desafíos sobre la creación e interpretación de gráficos de barras,
+          líneas y sectores. Selecciona el tipo de gráfica adecuada según los datos.
+        </p>
+      </div>
+      <img src="imagenes/juego7.png" alt="Nivel 7" />
+    </div>
+  </section>
+
+  <section id="nivel8">
+    <div class="feature reverse from-left">
+      <div>
+        <h2>Juego 8: Experimentos aleatorios</h2>
+        <p>
+          Mediante una ruleta se deben de responder las preguntas segun la dificultad 
+          que resulte de este experimento aleatorio, aplicando tus conocimientos sobre
+          eventos aleatorios y deterministicos en un entorno interactivo.
+        </p>
+      </div>
+      <img src="imagenes/juego8.png" alt="Nivel 8" />
+    </div>
+  </section>
+
+  <!-- DIVISOR -->
+  <div class="section-divider"></div>
+  <section id="sec8">
+    <div class="feature reverse from-left">
+      <div>
+        <h2>Descarga AI-Math Coach</h2>
+        <p>
+          Disponible en múltiples plataformas. Elige la que mejor se adapte a tus necesidades.
+        </p>
+        <div class="download-links">
+          <a href="#" id="download-windows" class="download-link">Descargar para Windows</a>
+          <a href="#" id="download-windows-portable" class="download-link">Descargar para Windows (portable)</a>
+          <!--a href="#" class="download-link">Descargar para macOS</a-->
+          <a href="#" id="download-android" class="download-link">Descargar para Android</a>
+          <!--a href="#" class="download-link">Descargar para iOS</a-->
+          <a href="https://joelalopeztrinidad.github.io/IAmathCoach/" target="_blank" class="download-link">Acceder en Web</a>
+        </div>
+      </div>
+      <img src="imagenes/icono.png" alt="Descargas"/>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 AI‑Math Coach · Aprende, responde y juega
+  </footer>
+
+  <!-- Modal para imágenes -->
+  <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+
+  <!-- Botón flotante de descarga -->
+  <div class="floating-download-container">
+    <button id="download-btn" class="floating-download-btn" onclick="document.querySelector('#sec8').scrollIntoView({behavior:'smooth'})">
+      <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 10V16M9 13L12 16L15 13M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div id="tooltip" class="tooltip">Ven, descargame</div>
+  </div>
+
+  <script>
+    const features = document.querySelectorAll('.feature');
+// Observer for download button visibility
+    const downloadBtn = document.getElementById('download-btn');
+    const tooltip = document.getElementById('tooltip');
+    const sec1 = document.getElementById('sec1-2');
+    const sec8 = document.getElementById('sec8');
+
+    const hero = document.getElementById('hero');
+    const jugabilidad = document.getElementById('jugabilidad');
+
+    
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+          tooltip.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    features.forEach(feature => observer.observe(feature));
+
+    
+
+    let tooltipInterval;
+
+    const showObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          downloadBtn.classList.add('visible');
+          startTooltipCycle();
+        }
+      });
+    }, { threshold: 0.1 });
+
+    const hideObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          downloadBtn.classList.remove('visible');
+          stopTooltipCycle();
+        }
+      });
+    }, { threshold: 0.1 });
+
+    const hideObserverHero = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          downloadBtn.classList.remove('visible');
+          stopTooltipCycle();
+        }
+      });
+    }, { threshold: 0.1 });
+
+    showObserver.observe(sec1);
+    showObserver.observe(jugabilidad);
+    hideObserverHero.observe(hero);
+    hideObserver.observe(sec8);
+
+    function startTooltipCycle() {
+      if (tooltipInterval) return; // Ya está corriendo
+      function cycle() {
+        tooltip.classList.add('visible');
+        setTimeout(() => {
+          tooltip.classList.remove('visible');
+          setTimeout(cycle, 5000); // Espera 5s antes de volver a aparecer
+        }, 5000); // Visible por 3s
+      }
+      cycle();
+      tooltipInterval = true; // Marcar como corriendo
+    }
+
+    function stopTooltipCycle() {
+      if (tooltipInterval) {
+        tooltip.classList.remove('visible');
+        tooltipInterval = null;
+      }
+    }
+
+    // Tooltip phrases
+    const phrases = ["Ven, descargame", "¡Descarga ahora!", "No te lo pierdas", "Haz clic aquí", "¡Es gratis!"];
+    let phraseIndex = 0;
+
+    setInterval(() => {
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      tooltip.textContent = phrases[phraseIndex];
+    }, 3000); // Cambia frase cada 3 segundos
+
+    // Descargas automáticas
+    function downloadFile(filename) {
+      const link = document.createElement('a');
+      link.href = filename;
+      link.download = filename.split('/').pop();
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    const windowsDownload = document.getElementById('download-windows');
+    const androidDownload = document.getElementById('download-android');
+    const windowsPortableDownload = document.getElementById('download-windows-portable');
+
+    if (windowsDownload) {
+      windowsDownload.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Cambia la ruta según dónde tengas los archivos
+        downloadFile('descargas/IA_MathCoach-Setup.exe');
+      });
+    }
+
+    if (windowsPortableDownload) {
+      windowsPortableDownload.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Cambia la ruta según dónde tengas los archivos
+        downloadFile('descargas/AIMatCoach.rar');
+      });
+    }
+
+    if (androidDownload) {
+      androidDownload.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Cambia la ruta según dónde tengas los archivos
+        downloadFile('descargas/AIMatCoach.apk');
+      });
+    }
+
+    // Overlay arcoíris
+    const overlay = document.getElementById('rainbow-overlay');
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const totalHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = Math.min(scrollY / totalHeight, 1);
+      const hue = progress * 360;
+      overlay.style.backgroundColor = `hsla(${hue}, 100%, 50%, 0.3)`;
+    });
+
+    // Imágenes flotantes
+    const images = Array.from({length:12}, (_,i) => `items/simbolos${i+1}.png`);
+
+    function generateFloatingImages() {
+      console.log('Generando imágenes flotantes');
+      // Fade out existentes
+      document.querySelectorAll('.floating-img').forEach(img => {
+        img.classList.add('fade-out');
+        setTimeout(() => img.remove(), 10000);
+      });
+      // Generar nuevas después de fade
+      setTimeout(() => {
+        const numImages = 8;
+        for(let i = 0; i < numImages; i++) {
+          const img = document.createElement('img');
+          img.src = images[Math.floor(Math.random() * images.length)];
+          img.className = 'floating-img';
+          img.style.position = 'fixed';
+          img.style.left = Math.random() * 100 + '%';
+          img.style.top = Math.random() * 100 + '%';
+          // Tamaños variables
+          const sizeType = ['small', 'medium', 'large'][Math.floor(Math.random() * 3)];
+          let width;
+          if (sizeType === 'small') width = Math.random() * 30 + 20;
+          else if (sizeType === 'medium') width = Math.random() * 50 + 50;
+          else width = Math.random() * 200 + 100;
+          img.style.width = width + 'px';
+          img.style.height = 'auto';
+          img.style.zIndex = '-1';
+          img.style.pointerEvents = 'none';
+          // Animación aleatoria
+          const animNum = Math.floor(Math.random() * 3) + 1;
+          img.style.animationName = 'float' + animNum;
+          img.style.animationDuration = (Math.random() * 5 + 5) + 's';
+          img.style.animationIterationCount = 'infinite';
+          img.style.animationTimingFunction = 'ease-in-out';
+          document.body.appendChild(img);
+          console.log('Imagen añadida:', img.src);
+        }
+      }, 1000);
+    }
+
+    generateFloatingImages();
+
+    // Aparecen items flotantes solo cuando dejas de scrollear
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      // Cancelar timeout anterior si existe
+      clearTimeout(scrollTimeout);
+      
+      // Esperar 1 segundo después de que el usuario deja de scrollear
+      scrollTimeout = setTimeout(() => {
+        generateFloatingImages();
+      }, 1000);
+    });
+
+    // Modal functionality
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeBtn = document.querySelector('.close');
+
+    document.querySelectorAll('.feature img').forEach(img => {
+      img.addEventListener('click', function() {
+        modal.classList.add('show');
+        modalImg.src = this.src;
+      });
+    });
+
+    closeBtn.addEventListener('click', function() {
+      modal.classList.remove('show');
+    });
+
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.classList.remove('show');
+      }
+    });
+
+    // Shake animation removed, now continuous in CSS
+
+    // Proportional background scroll
+    let bgPosX = 0;
+    let direction = 1;
+    const totalScroll = document.body.scrollHeight - window.innerHeight;
+
+    setInterval(() => {
+      bgPosX += direction * 0.5;
+      if (bgPosX >= 100) direction = -1;
+      if (bgPosX <= 0) direction = 1;
+    }, 50);
+
+    window.addEventListener('scroll', () => {
+      const progress = Math.min(window.scrollY / totalScroll, 1);
+      document.body.style.backgroundPosition = bgPosX + '% ' + (progress * 100) + '%';
+    });
+
+    // CONTROLES DE MÚSICA
+    const audio = document.getElementById('background-music');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const volumeSlider = document.getElementById('volume-slider');
+    const playIcon = document.getElementById('play-icon');
+    const pauseIcon = document.getElementById('pause-icon');
+
+    // Reproducir automáticamente la música
+    audio.volume = 0.5;
+    audio.play().catch(() => {
+      // Si la autoplay falla, el usuario deberá iniciar manualmente
+      console.log('Autoplay bloqueado. El usuario puede iniciar la música manualmente.');
+    });
+
+    // Cambiar entre reproducir y pausar
+    playPauseBtn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'block';
+      } else {
+        audio.pause();
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
+      }
+    });
+
+    // Control de volumen
+    volumeSlider.addEventListener('input', (e) => {
+      audio.volume = e.target.value / 100;
+    });
+
+    // Actualizar icono al iniciar
+    playIcon.style.display = 'none';
+    pauseIcon.style.display = 'block';
+  </script>
+
+</body>
+</html>
